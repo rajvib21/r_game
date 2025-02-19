@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello Devansh</title>
+
+    <style>
+        /* Import Cute Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+
+        /* ✨ Cute Background with Gradient */
+        body {
+            background: linear-gradient(120deg, #A7C7E7, #1c4269);
+            font-family: 'Caveat', cursive;
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+        }
+
+        /* 🌸 Cute Container */
+        .container {
+            max-width: 550px; /* Reduced from 600px */
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        /* 🌟 Cute Header */
+        h1 {
+            font-size: 35px;
+            font-family: 'Caveat', cursive;
+            color: #b30b0b;
+            text-shadow: 2px 2px 8px rgba(255, 77, 109, 0.5);
+        }
+
+        /* 🐧 Penguin Image Animation */
+        .img {
+            width: 80px; /* Reduced from 100px */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .img:hover {
+            transform: scale(1.2) rotate(10deg);
+        }
+
+        /* ✨ Buttons Styling */
+        button {
+            padding: 14px 35px;
+            font-size: 14px;
+            font-weight: bold;
+            font-family: 'DynaPuff', cursive;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+            margin: 10px;
+        }
+
+        #yes-button:hover {
+            transform: scale(1.5);
+            box-shadow: 0 0 20px rgba(255, 77, 109, 1);
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 30px;
+            color: pink;
+            animation: floating-hearts 4s linear infinite;
+        }
+
+        .flower {
+            position: absolute;
+            font-size: 25px;
+            color: pink;
+            animation: flower-shower 3s linear infinite;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Music -->
+    <audio autoplay loop>
+        <source src="your-music.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="container">
+        <!-- New GIF -->
+        <div class="gif-container">
+            <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExemE0ZjBieHM3d215MXd6dWthOGthbXczZXljNG9rNXY0ZmpuMTJiNCZlcD12MV9pbnRlcm5naWZfYnlfaWQmY3Q9Zw/s414bsxh6UPhf5ays8/giphy.gif" alt="Cute GIF">
+        </div>
+
+        <!-- Question Heading -->
+        <h1>Will you be my valentine???!!!!!</h1>
+
+        <!-- Buttons -->
+        <div class="button">
+            <button id="yes-button">YES</button>
+            <button id="no-button">No</button>
+        </div>
+
+        <!-- Flower Shower Effect -->
+        <div id="flowers"></div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const noButton = document.getElementById("no-button");
+            const yesButton = document.getElementById("yes-button");
+
+            // Function to move "No" button
+            noButton.addEventListener("mouseover", function() {
+                // Get window width & height
+                const maxX = window.innerWidth - noButton.clientWidth - 50;
+                const maxY = window.innerHeight - noButton.clientHeight - 50;
+
+                // Generate random positions
+                const randomX = Math.floor(Math.random() * maxX);
+                const randomY = Math.floor(Math.random() * maxY);
+
+                // Move button (Fixed Syntax Error)
+                noButton.style.position = "absolute";
+                noButton.style.left = randomX + "px";
+                noButton.style.top = randomY + "px";
+
+                // (Optional) Add a funny sound effect when "No" moves
+                let audio = new Audio('https://www.myinstants.com/media/sounds/vine-boom.mp3');
+                audio.play();
+            });
+
+            // Function to redirect to a cute page when "Yes" is clicked
+            yesButton.addEventListener("click", function() {
+                window.location.href = "yes.html"; // Redirect to the new page
+            });
+        });
+    </script>
+
+</body>
+</html>
